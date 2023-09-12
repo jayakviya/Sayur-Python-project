@@ -1,0 +1,13 @@
+print("Welcome to our shop")
+print("Please order what do you want")
+print("1 Vadai = 30 rs")
+print("1 Soda = 20 rs")
+print("1 Sandwich = 100 rs")
+item1 = int(input("How many Vadai do you want :"))
+item2 = int(input("How many Soda do you want: "))
+item3 = int(input("How many Sandwich do you want: "))
+total = (item1*30) + (item2*20) + (item3*100)
+print("Total amount =",total)
+amount = float(input("Give the money that you should pay:"))
+balance = amount-total
+print("Your Balance amount is :",balance)
