@@ -1,0 +1,22 @@
+print(" HSC Result")
+name = input("Enter your name :")
+rollno = input("Enter your Roll no:")
+mark1 = int(input("Enter your Tamil mark :"))
+mark2 = int(input("Enter your English mark :"))
+mark3 = int(input("Enter your Maths mark :"))
+mark4 = int(input("Enter your Chemistry mark :"))
+mark5 = int(input("Enter your Physics mark:"))
+mark6 = int(input("Enter your Biology mark:"))
+total = mark1+mark2+mark3+mark4+mark5+mark6
+print("Total=",total)
+percentage = (total/600)*100
+if percentage >= 70:
+    print("First class with Distinction")
+elif 70 > percentage >= 60:
+    print("First class")
+elif 60 > percentage >= 50:
+    print("second class")
+elif 50 > percentage >= 40:
+    print("Third class")
+else:
+    print("Fail")
