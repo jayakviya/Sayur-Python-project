@@ -1,0 +1,33 @@
+'''
+print your name in pramid format
+like if your name is priya then
+it should be in the form
+p
+pr
+pri
+priy
+priya
+'''
+your_name = input("enter your name :") #get the input from thr user
+for i in range(len(your_name)) : 
+
+    for j in range(i+1) :
+
+        print(your_name[j],end=" ")
+
+    print()
+ 
+'''
+output is
+enter your name : jayakaviya
+  
+  j 
+  j a 
+  j a y 
+  j a y a         
+  j a y a k       
+  j a y a k a     
+  j a y a k a v   
+  j a y a k a v i 
+  j a y a k a v i y
+  j a y a k a v i y a'''
