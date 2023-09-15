@@ -1,0 +1,13 @@
+########## Program 3
+#PigLatin - From the input string, for each word, remove the first, add it to the end of the word
+#and add 'ay' to it.
+#eg I am Python
+#answer Iay maay ythonPay
+
+inputSentence = input("Enter your input" ) # get the input
+pigLatinKey = "ay" # initialise the key 
+sentence = inputSentence.split(" ") # split the sentence
+ sentence1 =""
+ for word in sentence :
+ 
+
