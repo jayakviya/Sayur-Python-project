@@ -4,12 +4,18 @@
 #eg I am Python
 #answer Iay maay ythonPay
 
-inputsentence = input("Enter your sentence")#get the input
+inputsentence = input("Enter your sentence :")#get the input
 piglatinKey = "ay" # initialise the key letter
 sentence = ""
 for word in inputsentence.split(" ") : # this loop execute the no of words in the input sentence
-    sentence = sentence + word[1:] + word[0] + piglatinKey
+    firstLetter = word[0]
+    sentence = sentence + word[1:] + firstLetter + piglatinKey + " "
+print("_"*30)
 print("The changed sentence = ",sentence)
-print("_"*10)
-
-
+print("_"*30)
+'''
+The Output is 
+Enter your sentence :We are friends
+______________________________
+The changed sentence =  eWay reaay riendsfay
+'''
