@@ -1,3 +1,9 @@
+########### Program #########
+#To add space after every two letters of the input string
+# for example
+# input string = abcdef
+# output = ab cd ef
+
 inputString = list(input("Enter your input string: ")) # get the input string
 outputString = "" 
 
