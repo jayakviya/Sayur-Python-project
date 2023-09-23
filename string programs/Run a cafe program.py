@@ -13,23 +13,24 @@ Cafe_price=[20,15,30,45]
 # for i,food in enumerate(Cafe_Menu):
 #     print(f" {i+1} - {food}")
 # print()
+total = 0
 while True:
     item=input("what do you want?")
-    order=""
     no_ofItem = re.findall("\d+|\d+",item)
     things = re.findall("(coffees?|teas?|blackteas?|greenteas?)",item)
     print(no_ofItem)
     print(things)
     b=True
+    break
     for i in range(len(Cafe_Menu)):
         if things in Cafe_Menu:
             b=True
             quantity = int(input(f"Enter number of {things} you need ? "))
             order=f"{no_ofItem} {things} and its price is {no_ofItem*Cafe_price[i]}"      
-            total=total+(Cafe_price[i]*no_ofItem)
+            total+=(Cafe_price[i]*no_ofItem)
             ordered_list.append(order)
-        b=False
-        break
+            b=False
+            break
         if b:
             print(f"Sorry sir...{things} is not available")
         if int(input("Enter 1 to cancel order or 0 to continue ordeer :")):
