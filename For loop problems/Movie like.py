@@ -7,21 +7,24 @@
 #init variables
 movies = input("What movies you like ? ")
 #convert movies into a List
-movies = movies.split(" ")
-print(movies)
-commonMoviewCount = 0
+movies = movies.split(",")
+matchingMovie = []
+commonMovieCount = 0
 while (True) :
     #ask the second friend for one movie at a time
     movie = input ("Tell me your favourite movie?" )
     #Check if this movie is in the movie list
     #FillinMissingCode
     if movie in movies: 
-        commonMoviewCount += commonMoviewCount+1
+        commonMovieCount+=1
+        matchingMovie.append(movie)
+
     #check if we reached the max
-    if(commmonMovieCount >= 3):
+    if(commonMovieCount >= 3):
         break
     else:
         print ("Try again")
 
-print () #FillinMissingCode - list all the common movies
+print ()
 
+print(" ".join(matchingMovie))
