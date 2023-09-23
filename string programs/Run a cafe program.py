@@ -5,44 +5,72 @@ import re
 
 total_costPrize=500
 Cafe_Menu=["coffee","tea","greentea","blacktea"]
-ordered_list=[]
+#ordered_list=[]
 Cafe_price=[20,15,30,45]
-# print("Welcome to our shop!")
-# print("Please let us know what do you want")
-# print("Here our menu card :")
-# for i,food in enumerate(Cafe_Menu):
-#     print(f" {i+1} - {food}")
-# print()
-total = 0
-b=True
+
+total = 0 # initialise the total 
 while True:
     item=input("what do you want?")
     no_ofItem = re.findall("\d+|\d+",item)
     things = re.findall("(coffees?|teas?|blackteas?|greenteas?)",item)
-    print(no_ofItem)
     print(things)
-    break
-    for i in range(len(Cafe_Menu)):
-        if things in Cafe_Menu:
-            b=True
-            quantity = int(input(f"Enter number of {things} you need ? "))
-            order=f"{no_ofItem} {things} and its price is {no_ofItem*Cafe_price[i]}"      
-            total+=(Cafe_price[i]*no_ofItem)
-            ordered_list.append(order)
-            b=False
+    for i in range(len(things)): # to execute the for loop for user's no of order
+        if things[i] in Cafe_Menu:
+            no_ofItem[i]=int(no_ofItem[i])
+            if things[i] == Cafe_Menu[0]: # to find out the place of the thing[i] in cafemenu
+                print(f"{no_ofItem[i]} {things[i]} is Rs.{no_ofItem[i]*Cafe_price[0]}")
+             
+                total+=no_ofItem[i]*Cafe_price[0]
+            elif things[i] == Cafe_Menu[1]:
+                print(f"{no_ofItem[i]} {things[i]} is Rs.{no_ofItem[i]*Cafe_price[1]}")
+             
+                total+=(no_ofItem[i]*Cafe_price[1])
+            elif things[i]== Cafe_Menu[2]:
+                print(f"{no_ofItem[i]} {things[i]} is Rs.{no_ofItem[i]*Cafe_price[2]}")
+             
+                total+=(no_ofItem[i]*Cafe_price[2])
+            elif things[i] == Cafe_Menu[3]:
+                print(f"{no_ofItem[i]} {things[i]} is Rs.{no_ofItem[i]*Cafe_price[3]}")
+             
+                total+=(no_ofItem[i]*Cafe_price[3])
+        else:
             break
-        if b:
-            print(f"Sorry sir...{things} is not available")
-        if int(input("Enter 1 to cancel order or 0 to continue ordeer :")):
         
-            break
-#                 print("Thankyou for coming our shop")
-                       
-#                 break
-print()
-print(f"Your Ordered list : {ordered_list}")
-print(f"Your total bill amount is : {total}")
-# if total<total_costPrize:
-#     print(f"You had loss because your total profit = {total} is < total invested amount per day = {total_costPrize}")
-# elif total>total_costPrize:
-#     print(f"You had get profit your total profit = {total} is > total invested amount per day = {total_costPrize}")
+            
+    b=int(input("Enter 1 to cancel order or 0 to continue ordeer :"))
+    if b==1:
+        break
+    else:
+        continue
+        
+print(f"Total sale bill amount is : {total}")
+if total<total_costPrize:
+    print("you had get loss")
+elif total>total_costPrize:
+    print("You had get profit")
+    '''
+output 1:
+what do you want?4 tea 3 blacktea
+['tea', 'blacktea']
+4 tea is Rs.60
+3 blacktea is Rs.135
+Enter 1 to cancel order or 0 to continue ordeer :1
+Your total bill amount is : 195
+you had get loss
+
+output 2:
+what do you want?3 coffee and 4 blacktea 5 greentea
+['coffee', 'blacktea', 'greentea']
+3 coffee is Rs.60
+4 blacktea is Rs.180
+5 greentea is Rs.150
+Enter 1 to cancel order or 0 to continue ordeer :0
+what do you want?5tea 6 blacktea
+['tea', 'blacktea'] 
+5 tea is Rs.75      
+6 blacktea is Rs.270
+Enter 1 to cancel order or 0 to continue ordeer :1
+Total sale bill amount is : 735
+You had get profit
+
+'''
