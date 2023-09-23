@@ -14,13 +14,13 @@ Cafe_price=[20,15,30,45]
 #     print(f" {i+1} - {food}")
 # print()
 total = 0
+b=True
 while True:
     item=input("what do you want?")
     no_ofItem = re.findall("\d+|\d+",item)
     things = re.findall("(coffees?|teas?|blackteas?|greenteas?)",item)
     print(no_ofItem)
     print(things)
-    b=True
     break
     for i in range(len(Cafe_Menu)):
         if things in Cafe_Menu:
