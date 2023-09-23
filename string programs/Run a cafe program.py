@@ -17,22 +17,12 @@ while True:
     for i in range(len(things)): # to execute the for loop for user's no of order
         if things[i] in Cafe_Menu:
             no_ofItem[i]=int(no_ofItem[i])
-            if things[i] == Cafe_Menu[0]: # to find out the place of the thing[i] in cafemenu
-                print(f"{no_ofItem[i]} {things[i]} is Rs.{no_ofItem[i]*Cafe_price[0]}")
+            for j in range(len(Cafe_Menu)): #to check if the item is matching
+
+                if things[i] == Cafe_Menu[j]: # to find out the place of the thing[i] in cafemenu
+                    print(f"{no_ofItem[i]} {things[i]} is Rs.{no_ofItem[i]*Cafe_price[0]}")
              
-                total+=no_ofItem[i]*Cafe_price[0]
-            elif things[i] == Cafe_Menu[1]:
-                print(f"{no_ofItem[i]} {things[i]} is Rs.{no_ofItem[i]*Cafe_price[1]}")
-             
-                total+=(no_ofItem[i]*Cafe_price[1])
-            elif things[i]== Cafe_Menu[2]:
-                print(f"{no_ofItem[i]} {things[i]} is Rs.{no_ofItem[i]*Cafe_price[2]}")
-             
-                total+=(no_ofItem[i]*Cafe_price[2])
-            elif things[i] == Cafe_Menu[3]:
-                print(f"{no_ofItem[i]} {things[i]} is Rs.{no_ofItem[i]*Cafe_price[3]}")
-             
-                total+=(no_ofItem[i]*Cafe_price[3])
+                    total+=no_ofItem[i]*Cafe_price[0]
         else:
             break
         
