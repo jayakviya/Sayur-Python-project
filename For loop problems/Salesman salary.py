@@ -10,15 +10,26 @@
 monthlySalesList = [5,23,21,14,23,12,4,12,22,22,34,12]  # Sample number of phones sold in each month in a year
 #FillinMissingCode - initialise all the variables needed
 currentMonthSalary= 10000
-previousMonthSalary = 10000
+previousMonthSalary = 0
+cumulativeBonus = 0
 for month, phoneCount in enumerate(monthlySalesList):
-    if phoneCount==5:
-        currentMonthSalary+=5000
-    elif phoneCount>5:
+    print (f"{month+1} month's salary before additional bonus {currentMonthSalary}")
+    if phoneCount>=5:
         currentMonthSalary+=5000+(phoneCount-5)*1100
+    else:
+        currentMonthSalary=currentMonthSalary
+ 
+    if (previousMonthSalary >= 20000) and (phoneCount >=20) :
+        currentMonthSalary+=5000
+    else:
+        currentMonthSalary=currentMonthSalary
+    cumulativeBonus = currentMonthSalary-10000
+    print("This month bonus =",cumulativeBonus)
     
-    print (f"{month+1} month's salary before additional bonus {currentMonthSalary}") 
-    #if (currentMonthSalary > 20000) and (phoneCount>20) :
+    if cumulativeBonus >= 100000:
+        currentMonthSalary+=currentMonthSalary*0.05
+    print (f"{month+1} month's salary after additional bonus {currentMonthSalary}")
+    previousMonthSalary = currentMonthSalary
         
 
 
@@ -27,18 +38,6 @@ for month, phoneCount in enumerate(monthlySalesList):
     #check for condition #If the salesman's salary is more than Rs20000 in the previous month and sells 20 or more phones 
     # this month also, then he gets additional Rs5000.
 
-    if(phoneCount < 20):
-        previousMonthSalary = currentMonthSalary #we set this so that, we can use this info in the next iteration
-        continue #no need to calculate anything because <20 phones sold
-    
-    #calculate the new salary
-    #curentMonthSalary = r
-    print(f"This month's salary after additional bonus {currentMonthSalary}")
-    previousMonthSalary = currentMonthSalary #Why are we doing this?
-
- 
-   ##### Problem 4 ###
-   # Same as above. When the cumulative bonus is more than one lakh , base salary is increased
-   # by 5% for each month. Calculate the salary for each month.
+   
    
    
