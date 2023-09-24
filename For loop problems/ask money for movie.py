@@ -19,13 +19,15 @@ for i in range(4):
             
                 print("Thank you!")
                 askMoney = int(input("Gimme some more money :"))
+                if (i+2)==5 :
+                    print("you asked money for 5 times and it is the limited time")
+                else:              
+                    continue
             else :
                 print("Thank you I have enough money")
-                print(f"{i+2} times I ask for money")
-            if (i+2)==5 :
-                print("you asked money for 5 times and it is the limited time")
-            else:
-                print('You may ask one more time')
+                print(f"{i+1} times I ask for money")
+                break
+        
 
             
         else:
