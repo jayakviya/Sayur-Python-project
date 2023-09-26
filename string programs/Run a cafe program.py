@@ -14,6 +14,7 @@ while True:
     no_ofItem = re.findall("\d+|\d+",item)
     things = re.findall("(coffees?|teas?|blackteas?|greenteas?)",item)
     print(things)
+    print(no_ofItem)
     for i in range(len(things)): # to execute the for loop for user's no of order
         if things[i] in Cafe_Menu:
             no_ofItem[i]=int(no_ofItem[i])

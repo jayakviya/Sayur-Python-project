@@ -11,15 +11,18 @@ cost = ["1000","1500"]
 stack = ["100","200"]
 while (noOfbags < 10 and sales <10000):
     askcustomer = input("what colour of bags do you want red or green?") 
-    noOfwantedBags = re.findall("/d+|/d+",askcustomer)
-    wantedBags = re.findall("red|green",askcustomer)
-    for i,bag in enumerate(wantedBags):
-        if bag == "red":
-            noOfbags += noOfwantedBags[i]
-            sales += noOfwantedBags[i]*100
-        elif bag == "green":
-            noOfbags += noOfwantedBags[i]
-            sales += noOfwantedBags[i]*200
+    noOfwantedBags = re.findall(r"\d+|\d+",askcustomer)
+    wantedBags = re.findall(r"red|green",askcustomer)
+    print(noOfwantedBags)
+    for i ,bag in enumerate(wantedBags):
+        if bag in bags:
+
+            if bag == "red":
+                noOfbags += int(noOfwantedBags[i])           
+                sales += int(noOfwantedBags[i])*cost[0]
+            elif bag == "green":
+                noOfbags +=int(noOfwantedBags[i])
+                sales +=  int(noOfwantedBags[i])*cost[1]
 print("No of bags sold =",noOfbags)
 print("Total sales amount:",sales)
 
