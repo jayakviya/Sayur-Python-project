@@ -7,7 +7,7 @@ import re
 noOfbags = 0
 sales = 0
 bags = ["red","green"]
-cost = ["1000","1500"]
+cost = [1000,1500]
 stack = ["100","200"]
 while (noOfbags < 10 and sales <10000):
     askcustomer = input("what colour of bags do you want red or green?") 
@@ -23,6 +23,9 @@ while (noOfbags < 10 and sales <10000):
             elif bag == "green":
                 noOfbags +=int(noOfwantedBags[i])
                 sales +=  int(noOfwantedBags[i])*cost[1]
+        else:
+            print("sorry only red and green bags are available")
+    print("cost=",sales)
 print("No of bags sold =",noOfbags)
 print("Total sales amount:",sales)
 
