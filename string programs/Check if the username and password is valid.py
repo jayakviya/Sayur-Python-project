@@ -7,7 +7,7 @@
 
 import re
 
-userName = input("Enter user name:")
+userName = "uma@gmail.com"
 #passWord = input("Enter your password")
-check = re.search(r'@(.com|.edu|.tech|.uma@gmail.coorg)',userName)
+check = re.search(r'@.(gmail\.coorg|com|edu|tech|org)$',userName)
 print(check)
