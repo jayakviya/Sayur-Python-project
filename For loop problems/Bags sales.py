@@ -13,7 +13,7 @@ while (noOfbags < 10 and sales <10000):
     askcustomer = input("what colour of bags do you want red or green?") 
     noOfwantedBags = re.findall(r"\d+|\d+",askcustomer)
     wantedBags = re.findall(r"red|green",askcustomer)
-    print(noOfwantedBags)
+   
     for i ,bag in enumerate(wantedBags):
         if bag in bags:
 
@@ -29,7 +29,18 @@ while (noOfbags < 10 and sales <10000):
 print("No of bags sold =",noOfbags)
 print("Total sales amount:",sales)
 
-        
+'''
+output 
+what colour of bags do you want red or green?2 red
+['2']
+cost= 2000
+what colour of bags do you want red or green?3 green and 5 red bags
+['3', '5']
+cost= 11500
+No of bags sold = 10
+Total sales amount: 11500
+
+'''
    
 
         
