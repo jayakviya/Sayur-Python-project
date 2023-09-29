@@ -9,5 +9,9 @@ import re
 
 userName = "uma@gmail.com"
 #passWord = input("Enter your password")
-check = re.search(r'@.(gmail\.coorg|com|edu|tech|org)$',userName)
-print(check)
+check = re.search(r'@(.com|.edu|.tech|.org)$',userName)
+
+newPassWord = userName.split("@")[0]
+newPassword2 = userName.split(".")[0]
+print(newPassWord)
+print(newPassword2)
