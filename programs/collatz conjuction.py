@@ -12,6 +12,7 @@ for i in range(2):
     num.append(value)
     for n in num :
         c=0
+        n=value
         while n!=1:
             if n %2 ==0:
                 n=n//2
@@ -21,6 +22,8 @@ for i in range(2):
             c+=1
         count.append(c)
 min_count = min(count)
-print(f"the number {num[count.index(min_count)]} have minimum iterations {min_count}")
+index = count.index(min_count)
+print(index)
+print(f"the number {num[index]} have minimum iterations {min_count}")
             
 
