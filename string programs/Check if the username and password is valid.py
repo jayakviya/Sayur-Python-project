@@ -7,11 +7,24 @@
 
 import re
 
-userName = "uma@gmail.com"
-#passWord = input("Enter your password")
-check = re.search(r'@(.com|.edu|.tech|.org)$',userName)
+userName = input("Enter your username:")#to get username 
+user_passWord = input("Enter your password")#to get user password
 
-newPassWord = userName.split("@")[0]
-newPassword2 = userName.split(".")[0]
-print(newPassWord)
-print(newPassword2)
+
+check = re.search(r'@.*\.com', userName)#check if the username contain the spec char'@' and it ends with .com or .edu and ext.
+if check:
+    print("Username is valid")
+else:
+    print("Username is invalid ")
+part1 =  userName.split("@")[0]
+part2 =  userName.split("@")[1].split(".")[0]
+
+#construct password
+newPassword = part1[0]+part1[2] + part1[-3:]+part2[:3]
+          
+
+
+if user_passWord.startswith(newPassword) and re.search(r'\d{3}',user_passWord):
+    print("Your password is correct")
+else:
+    print("Your password is incorrect")
