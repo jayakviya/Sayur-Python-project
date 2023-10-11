@@ -11,6 +11,7 @@ def print_letters(alpha,inputString):
     first_accurence = inputString.find(alpha)
     last_accurence = inputString.rfind(alpha)
     alpha_found=False
+    
     if first_accurence!=-1:
         if first_accurence!= last_accurence:
 
@@ -22,7 +23,7 @@ def print_letters(alpha,inputString):
         
         else:
             print(f"There is only one {alpha}")
-            middle_letters = middle_letters[first_accurence:]
+            inputString = inputString[first_accurence+1:]
             first_accurence = 0
     else :
         print(f"There is no {alpha} in your string")
@@ -31,10 +32,9 @@ def print_letters(alpha,inputString):
     
         
 #maincode
-inputString =  input("Enter your string")
+inputString =  input("Enter your string :")
 alpha_found = {}
 for i in range(26):
-
     alpha = chr(65+i)
     print_letters(alpha,inputString)
     if alpha in alpha_found and alpha_found[alpha]:
