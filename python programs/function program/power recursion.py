@@ -1,3 +1,4 @@
+#find the power of given numbers usng recursion
 def power(x,n):
     if n==0:
         return 1

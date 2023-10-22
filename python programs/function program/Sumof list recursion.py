@@ -1,3 +1,4 @@
+#find the sum of the list using recursion
 def sum(list1):
     if len(list1) == 1:
         return list1[0]
